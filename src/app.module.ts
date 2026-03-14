@@ -8,9 +8,10 @@ import { CartService } from './cart/cart.service';
 import { CartController } from './cart/cart.controller';
 import { EmployeeModule } from './employee/employee.module';
 import { CategoryModule } from './category/category.module';
+import { StudentModule } from './student/student.module';
 
 @Module({
-  imports: [EmployeeModule, CategoryModule],
+  imports: [EmployeeModule, CategoryModule, StudentModule],
   controllers: [
     AppController,
     UserController,
