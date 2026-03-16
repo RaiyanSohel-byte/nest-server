@@ -16,13 +16,13 @@ export class StudentService {
     return student;
   }
   //POST
-  createStudent(data: { name: string }) {
+  createStudent(data: { name: string; age: number }) {
     const newStudent = {
       id: Date.now(),
       ...data,
     };
     this.students.push(newStudent);
-    return newStudent;
+    return { message: 'Student created successfully', newStudent };
   }
 
   //PUT
@@ -36,6 +36,7 @@ export class StudentService {
   //PATCH
   patchStudent(id: number, data: Partial<{ name: string; age: number }>) {
     const student = this.getStudentById(id);
+    if (!student) throw new NotFoundException('No student found');
     Object.assign(student, data);
     return student;
   }

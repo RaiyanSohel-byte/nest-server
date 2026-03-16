@@ -30,7 +30,10 @@ export class StudentController {
     return this.studentService.updateStudent(Number(id), body);
   }
   @Patch(':id')
-  patch(@Param('id') id: string, body: Partial<{ name: string; age: number }>) {
+  patch(
+    @Param('id') id: string,
+    @Body() body: Partial<{ name: string; age: number }>,
+  ) {
     return this.studentService.patchStudent(Number(id), body);
   }
   @Delete(':id')
