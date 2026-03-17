@@ -10,15 +10,25 @@ import { EmployeeModule } from './employee/employee.module';
 import { CategoryModule } from './category/category.module';
 import { StudentModule } from './student/student.module';
 import { CustomerModule } from './customer/customer.module';
+import { TeacherController } from './teacher/teacher.controller';
+import { TeacherService } from './teacher/teacher.service';
+import { TeacherModule } from './teacher/teacher.module';
 
 @Module({
-  imports: [EmployeeModule, CategoryModule, StudentModule, CustomerModule],
+  imports: [
+    EmployeeModule,
+    CategoryModule,
+    StudentModule,
+    CustomerModule,
+    TeacherModule,
+  ],
   controllers: [
     AppController,
     UserController,
     ProductController,
     CartController,
+    TeacherController,
   ],
-  providers: [AppService, ProductService, CartService],
+  providers: [AppService, ProductService, CartService, TeacherService],
 })
 export class AppModule {}
