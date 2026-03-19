@@ -13,6 +13,7 @@ import { CustomerModule } from './customer/customer.module';
 import { TeacherController } from './teacher/teacher.controller';
 import { TeacherService } from './teacher/teacher.service';
 import { TeacherModule } from './teacher/teacher.module';
+import { MynameController } from './myname/myname.controller';
 
 @Module({
   imports: [
@@ -28,6 +29,7 @@ import { TeacherModule } from './teacher/teacher.module';
     ProductController,
     CartController,
     TeacherController,
+    MynameController,
   ],
   providers: [AppService, ProductService, CartService, TeacherService],
 })
